@@ -47,7 +47,7 @@ export default function HomePage() {
             <br />
             Baked goods &amp; home essentials.
             <br className="sm:hidden" />
-            <span className="hidden sm:inline"> · </span>Nash, TN pickup or shipping available.
+            <span className="hidden sm:inline"> · </span>Nashville / Franklin / Gallatin pickup or shipping available.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

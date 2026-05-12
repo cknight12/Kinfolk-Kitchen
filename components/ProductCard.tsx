@@ -75,10 +75,12 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
             src={image}
             alt={name}
             fill
-            className={`object-cover object-center transition-transform duration-300 ${
+            className={`object-cover transition-transform duration-300 ${
               id === 'strawberry-harvest-jam'
-                ? 'scale-90 group-hover:scale-95'
-                : 'group-hover:scale-105'
+                ? 'object-[center_30%] group-hover:scale-105'
+                : id === 'beeswax-candles'
+                ? 'object-[center_67%] group-hover:scale-105'
+                : 'object-center group-hover:scale-105'
             }`}
           />
         ) : placeholder === 'golden' ? (

@@ -72,9 +72,8 @@ export const homeBody: Product[] = [
     priceLabel: '$25 each',
     description:
       'Hand-poured beeswax candles in two cozy scents. Clean burning, naturally fragrant, and non-toxic.',
-    image: null,
+    image: '/images/beeswax-candles.jpg',
     category: 'homeBody',
-    placeholder: 'golden',
     variants: ['Orange Lemon Summer Blend', 'Coconut Vanilla'],
   },
 ]
