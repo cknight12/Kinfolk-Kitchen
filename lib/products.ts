@@ -18,19 +18,8 @@ export const bakedGoods: Product[] = [
     priceLabel: '$15',
     description:
       'Naturally leavened sourdough baked fresh in small batches. Simple ingredients, real flavor, made with love.',
-    image: '/images/baked-goods-photo.jpg',
+    image: '/images/sourdough-loaf.jpg',
     category: 'bakedGoods',
-  },
-  {
-    id: 'sourdough-hamburger-buns',
-    name: 'Sourdough Hamburger Buns (6)',
-    price: 15,
-    priceLabel: '$15',
-    description:
-      'Set of 6 soft, fluffy sourdough hamburger buns with that perfect sourdough tang. Summer cookout approved.',
-    image: null,
-    category: 'bakedGoods',
-    placeholder: 'cream',
   },
   {
     id: 'sourdough-bagel',
@@ -39,30 +28,29 @@ export const bakedGoods: Product[] = [
     priceLabel: '$4 each',
     description:
       'Chewy, golden sourdough bagels made fresh. Great for breakfast or a wholesome snack.',
-    image: null,
+    image: '/images/bagels.jpeg',
     category: 'bakedGoods',
-    placeholder: 'cream',
   },
   {
-    id: 'sourdough-starter',
-    name: 'Sourdough Starter',
-    price: 5,
-    priceLabel: '$5',
+    id: 'einkorn-muffins',
+    name: 'Einkorn Muffins',
+    price: 3,
+    priceLabel: '$3 each',
     description:
-      'Take home a living piece of our kitchen. Our active, bubbly sourdough starter is ready to bake with.',
-    image: null,
+      'Soft, wholesome muffins made with ancient einkorn wheat. Simple ingredients, big flavor.',
+    image: '/images/einkorn-muffins.jpg',
     category: 'bakedGoods',
-    placeholder: 'cream',
   },
   {
     id: 'strawberry-harvest-jam',
     name: 'Strawberry Harvest Jam',
-    price: null,
-    priceLabel: 'Ask for availability',
+    price: 6,
+    priceLabel: '$6 small · $10 large',
     description:
-      'Sweet, vibrant strawberry jam made with fresh-picked berries and a clean, simple recipe. Ask us about current batches.',
-    image: '/images/strawberry-jam.png',
+      'Sweet, vibrant strawberry jam made with fresh-picked berries and a clean, simple recipe.',
+    image: '/images/strawberry-jam.jpg',
     category: 'bakedGoods',
+    variants: ['Small jar ($6)', 'Large jar ($10)'],
   },
 ]
 
@@ -95,7 +83,7 @@ export const allProducts: Product[] = [...bakedGoods, ...homeBody]
 
 export const featuredProducts: Product[] = [
   bakedGoods[0],  // Sourdough Loaf
-  bakedGoods[4],  // Strawberry Harvest Jam
+  bakedGoods[2],  // Strawberry Harvest Jam
   homeBody[0],    // Beef Tallow Lotion
   homeBody[1],    // Beeswax Candles
 ]
