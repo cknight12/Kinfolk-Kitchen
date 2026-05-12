@@ -96,29 +96,22 @@ export async function POST(request: NextRequest) {
 
     // Send email notification if Resend is configured
     const apiKey = process.env.RESEND_API_KEY
-    let emailResult = 'not attempted'
     if (apiKey && apiKey !== 'your_resend_api_key_here') {
       try {
         const { Resend } = await import('resend')
         const resend = new Resend(apiKey)
-        const from = process.env.EMAIL_FROM || 'onboarding@resend.dev'
-        const to = process.env.OWNER_EMAIL || 'hello@kinfolkkitchen.com'
-        const result = await resend.emails.send({
-          from,
-          to,
+        await resend.emails.send({
+          from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+          to: process.env.OWNER_EMAIL || 'hello@kinfolkkitchen.com',
           subject: `🧺 New Order from ${name} — ${order.id}`,
           html: buildEmailHtml(order),
         })
-        emailResult = JSON.stringify(result)
       } catch (emailErr) {
-        emailResult = `error: ${emailErr}`
         console.error('Email send failed:', emailErr)
       }
-    } else {
-      emailResult = 'no api key'
     }
 
-    return NextResponse.json({ success: true, orderId: order.id, emailResult })
+    return NextResponse.json({ success: true, orderId: order.id })
   } catch (err) {
     console.error('Order submission error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
